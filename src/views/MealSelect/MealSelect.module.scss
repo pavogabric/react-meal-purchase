@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+.MealSelect {
+  max-height: 90vh;
+  overflow-y: scroll;
+  padding: 1rem;
+  background-color: $background-color-light;
+  border-radius: $border-radius;
+
+  &Label {
+    margin-bottom: 3rem;
+
+    &List {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    li {
+      text-align: center;
+      border: 1px solid $color-primary-light;
+      border-radius: $border-radius-label;
+      display: inline-block;
+      padding: 12px 24px;
+      cursor: pointer;
+      &.selected {
+        border: 1px solid $color-primary;
+        background-color: $background-color;
+      }
+    }
+  }
+}

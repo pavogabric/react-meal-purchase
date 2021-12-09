@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useContext, useEffect } from 'react';
+import './App.scss';
+import { MealsContext } from './store/meals/meals-context';
+import { MealSelect, UserSelect } from './views';
 
 function App() {
+  const mealsContext = useContext(MealsContext);
+
+  useEffect(() => {
+    mealsContext.onLoadData();
+  }, []);
+
+  if (mealsContext.loading) {
+    return <h3>Loading...</h3>;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <MealSelect meals={mealsContext.meals} labels={mealsContext.labels} />
+        <UserSelect flight={mealsContext.flight} />
+      </main>
     </div>
   );
 }

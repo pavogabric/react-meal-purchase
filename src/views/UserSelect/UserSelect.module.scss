@@ -1,0 +1,45 @@
+@import '../../styles/variables';
+
+.UserSelect {
+  margin-left: 2rem;
+
+  &Tab {
+    padding: 1rem 2rem;
+    background-color: $background-color-light;
+    border-radius: $border-radius;
+    border: 1px solid $color-primary;
+  }
+
+  &Route {
+    margin-bottom: 2rem;
+    p {
+      color: rgba($color-primary, 0.5);
+      font-weight: $font-w-bold;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+  }
+
+  &PassengerList {
+    h4 {
+      margin-bottom: 4px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      &.selected {
+        border: 1px solid $color-primary;
+        background-color: $color-primary;
+        color: white;
+      }
+    }
+  }
+}

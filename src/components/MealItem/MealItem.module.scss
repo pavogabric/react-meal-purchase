@@ -1,0 +1,76 @@
+@import '../../styles/variables';
+
+.MealItem {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba($color-primary, 0.2);
+
+  &:first-of-type {
+    border-top: 1px solid rgba($color-primary, 0.2);
+  }
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &Details {
+    display: flex;
+    height: 180px;
+    margin-bottom: 1rem;
+
+    &Image {
+      width: 40%;
+
+      img {
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+
+    &Info {
+      width: 60%;
+      padding-left: 1rem;
+
+      h3 {
+        margin-bottom: 1rem;
+      }
+
+      p {
+        line-height: 1.8rem;
+      }
+    }
+  }
+
+  &Drinks {
+    width: 60%;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      li {
+        text-align: center;
+        border: 1px solid $color-primary-light;
+        border-radius: $border-radius-label;
+        display: inline-block;
+        padding: 6px 12px;
+        margin-right: 10px;
+        cursor: pointer;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+        &.selected {
+          border: 1px solid $color-primary;
+          background-color: $background-color;
+        }
+      }
+    }
+  }
+}
